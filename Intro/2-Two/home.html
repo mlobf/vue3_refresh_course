@@ -14,7 +14,24 @@
     </style>
   </head>
   <body>
-    <div id="app"></div>
+    <!-- Se houver mais de 20 unidades de oculos de sol, apresentar como disponivel -->
+    <!-- Se houver menos de 20 unidades de oculos de sol, apresentar como ultimas unidades -->
+    <!-- Se houver 0 unidades de oculos de sol, apresentar como indisponivel -->
+    <!-- Esta abordagem nao é muito boa, pois a logica fica no "template", sendo que deveria estar no  -->
+    <!--    back do front......  -->
+    <div id="app">
+      <h1 v-if="auth">Your User Profile {{auth}}</h1>
+      <h1 v-else>Please Login</h1>
+
+      <h2>Product: {{product}}</h2>
+      <br />
+      <h3 v-if="quantity >=20">Avaible!</h3>
+      <h3 v-else-if="quantity<=19 && quantity >=1">limited:</h3>
+      <h3 v-else>Sold off:</h3>
+
+      <br />
+      <h3 v-show="sale">On Sale!!!</h3>
+    </div>
   </body>
   <script src="https://unpkg.com/vue@next"></script>
   <script src="main.js"></script>

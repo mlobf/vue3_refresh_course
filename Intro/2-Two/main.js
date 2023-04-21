@@ -1,6 +1,12 @@
 const app = Vue.createApp({
   data() {
-    return {};
+    return {
+      //auth: false,
+      auth: true,
+      product: "sunglass",
+      quantity: 18,
+      sale: false,
+    };
   },
   methods: {
     methodOne() {},
