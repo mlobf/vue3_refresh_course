@@ -1,11 +1,26 @@
 const app = Vue.createApp({
   data() {
     return {
-      myObj: {},
+      firstName: "John",
+      lastName: "Doe",
     };
   },
+  computed: {
+    getRandomComputed() {
+      return Math.random();
+    },
+    getFullName() {
+      return `${this.firstName} ${this.lastName}`;
+    },
+    reversedFullName() {
+      let fullName = `${this.firstName} ${this.lastName}`;
+      return fullName.split("").reverse().join("");
+    },
+  },
   methods: {
-    methodOne() {},
+    getRandomNumber() {
+      return Math.random();
+    },
   },
 });
 
